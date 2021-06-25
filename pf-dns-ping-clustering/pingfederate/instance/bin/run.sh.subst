@@ -67,7 +67,7 @@ PF_SERVER_LIB="${PF_SERVER_HOME}/lib"
 # Set PF_HOME_ESC - this is PF_HOME but with spaces that are replaced with %20
 # PF_HOME_ESC=${PF_HOME// /%20}
 PF_HOME_ESC=$( echo "${PF_HOME}" | awk '{gsub(/ /,"%20");print;}' )
-
+echo Hello 1
 # Check for currently running instance of PingFederate
 RUNFILE="${PF_BIN}/pingfederate.pid"
 if test ! -f "${RUNFILE}"
@@ -225,6 +225,7 @@ trap 'kill -9 ${PID}; cat </dev/null >${RUNFILE} 2>/dev/null' 15
 
 STATUS=10
 while test ${STATUS} -eq 10
+echo Hello 2
 do
     # Execute the JVM
     # shellcheck disable=SC2086,SC2090
@@ -253,3 +254,4 @@ do
 
    cat </dev/null 2>/dev/null >"${RUNFILE}"
 done
+echo hello 3
