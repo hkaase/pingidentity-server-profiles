@@ -1,6 +1,0 @@
----
-hostPort: localhost:1099
-username: dev
-password: Secret1!
-rules:
-  pattern: ".*"
